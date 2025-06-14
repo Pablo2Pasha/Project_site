@@ -112,4 +112,10 @@ body {
 h3 {
     background-color: #c5d6fcc0;
     text-align: center;
+    border-radius: 5px;
+}
+h1 {
+  color: azure;
+  background-color: #2b4584;
+  border-radius: 5px;
 }
