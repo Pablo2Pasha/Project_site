@@ -136,12 +136,6 @@ body {
     z-index: 1000;
 }
 
-#plane {
-    width: 50px;
-    height: 50px;
-    background: #2b4584; 
-    transition: all 1s ease;
-}
 #loader {
     position: fixed;
   
@@ -156,7 +150,6 @@ body {
 #plane {
     width: 50px;
     height: 50px;
-    background: #2b4584;
     transition: all 1s ease;
 }
 

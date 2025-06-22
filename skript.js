@@ -1,34 +1,117 @@
-window.onload = function() {
-    const loader = document.getElementById("loader");
-    const plane = document.getElementById("plane");
+window.onload = function () {
+  const loader = document.getElementById("loader");
+  const animationContainer = document.createElement("div");
+  animationContainer.style.position = "relative";
+  animationContainer.style.width = "100vw";
+  animationContainer.style.height = "100vh";
+  loader.appendChild(animationContainer);
+  const plane = document.createElement("div");
+  plane.style.position = "absolute";
+  plane.style.width = "80px";
+  plane.style.height = "80px";
+  plane.style.backgroundImage = 'url("Plane.png")';
+  plane.style.backgroundSize = "contain";
+  plane.style.backgroundRepeat = "no-repeat";
+  plane.style.backgroundPosition = "center";
+  plane.style.opacity = "0";
+  animationContainer.appendChild(plane);
+  setTimeout(() => {
+    plane.style.opacity = "1";
+    startSpiralFlight();
+  }, 500);
+  function startSpiralFlight() {
+    let angle = 0;
+    let radius = 150;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    const targetAngle = Math.PI * 2 * 3; 
+    function animate() {
+      angle += 0.04;
+      radius -= 0.05;
+      const x = centerX + Math.cos(angle) * radius;
+      const y = centerY + Math.sin(angle) * radius;
+      plane.style.left = x - 40 + "px";
+      plane.style.top = y - 40 + "px";
+      plane.style.transform = `rotate(${angle + Math.PI / 2}rad)`;
+      if (angle >= targetAngle) {
+        const finalX = centerX + Math.cos(angle) * radius;
+        const finalY = centerY + Math.sin(angle) * radius;
+        startStraightFlight(finalX, finalY);
+        return;
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+  function startStraightFlight(startX, startY) {
+    let x = startX;
+    let y = startY;
+    const speed = 3;
+    let logoShown = false;
+    function animate() {
+      x += speed;
+      plane.style.left = x - 40 + "px";
+      plane.style.top = y - 40 + "px";
+      plane.style.transform = "rotate(0rad)";
+      if (!logoShown && x > window.innerWidth / 2 + 100) {
+        logoShown = true;
+        showThanks(x, y);
+      }
+      if (x < window.innerWidth + 100) {
+        requestAnimationFrame(animate);
+      } else {
+        finish();
+      }
+    }
+    animate();
+  }
+  function showThanks(x, y) {
+    const thanks = document.createElement("div");
+    thanks.textContent = "ХЕЛОУ БАЙДЕН";
+    thanks.style.position = "absolute";
+    thanks.style.left = x + 50 + "px";
+    thanks.style.top = y - 10 + "px";
+    thanks.style.fontSize = "28px";
+    thanks.style.color = "#2b4584";
+    thanks.style.fontWeight = "bold";
+    thanks.style.opacity = "0";
+    thanks.style.transition = "opacity 2s ease";
+    animationContainer.appendChild(thanks);
     setTimeout(() => {
-        plane.style.width = "80px";
-        plane.style.height = "20px";
-        plane.style.background = "#0094ff";
-        plane.style.borderRadius = "10px 5px 5px 5px";
-    }, 1000);
+      thanks.style.opacity = "1";
+    }, 300);
+  }
     setTimeout(() => {
-        plane.style.transform = "translateX(300px) rotate(20deg)";
-        plane.style.opacity = "0";
-        const text = document.createElement("div");
-        text.textContent = "хзчозасайт.ком";
-        text.style.position = "absolute";
-        text.style.fontSize = "24px";
-        text.style.color = "#2b4584";
-        text.style.fontWeight = "bold";
-        text.style.opacity = "0";
-        text.style.transition = "opacity 1s ease";
-        loader.appendChild(text);
-        setTimeout(() => {
-            text.style.opacity = "1";
-        }, 500);
+      title.style.top = "100px";
+      title.style.opacity = "1";
+    }, 500);
+  }
+  function showLogo() {
+  const title = document.createElement("div");
+  title.textContent = "хзчозасайт.ком";
+  title.style.position = "absolute";
+  title.style.top = "-50px";
+  title.style.left = "50%";
+  title.style.transform = "translateX(-50%)";
+  title.style.fontSize = "36px";
+  title.style.color = "#2b4584";
+  title.style.fontWeight = "bold";
+  title.style.opacity = "0";
+  title.style.transition = "top 1s ease, opacity 1s ease";
+  loader.appendChild(title);
+  setTimeout(() => {
+    title.style.top = "100px";
+    title.style.opacity = "1";
+  }, 500);
+}
+  function finish() {
+    showLogo();
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.remove();
+        document.querySelector(".header").style.opacity = "1";
+        document.querySelector(".main-section").style.opacity = "1";
+      }, 800);
     }, 2000);
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.remove();
-            document.querySelector(".header").style.opacity = "1";
-            document.querySelector(".main-section").style.opacity = "1";
-        }, 500);
-    }, 3500);
-};
+  }
