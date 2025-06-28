@@ -66,19 +66,19 @@ window.onload = function () {
     animate();
   }
   function showThanks(x, y) {
-    const thanks = document.createElement("div");
-    thanks.textContent = "ХЕЛОУ БАЙДЕН";
-    thanks.style.position = "absolute";
-    thanks.style.left = x + 50 + "px";
-    thanks.style.top = y - 10 + "px";
-    thanks.style.fontSize = "28px";
-    thanks.style.color = "#2b4584";
-    thanks.style.fontWeight = "bold";
-    thanks.style.opacity = "0";
-    thanks.style.transition = "opacity 2s ease";
-    animationContainer.appendChild(thanks);
+    const prv= document.createElement("div");
+    prv.textContent = "ХЕЛОУ БАЙДЕН";
+    prv.style.position = "absolute";
+    prv.style.left = x + 50 + "px";
+    prv.style.top = y - 10 + "px";
+    prv.style.fontSize = "28px";
+    prv.style.color = "#2b4584";
+    prv.style.fontWeight = "bold";
+    prv.style.opacity = "0";
+    prv.style.transition = "opacity 2s ease";
+    animationContainer.appendChild(prv);
     setTimeout(() => {
-      thanks.style.opacity = "1";
+      prv.style.opacity = "1";
     }, 300);
   }
     setTimeout(() => {
