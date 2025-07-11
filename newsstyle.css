@@ -21,9 +21,7 @@ main {
   border-radius: 8px;
   transition: background 0.3s;
 }
-.news-item:hover {
-  background: #1f5baf;
-}
+
 .news-item h3 {
   color: #ececec;
   margin-top: 0;
@@ -63,3 +61,12 @@ footer {
 .back-button:hover {
   background: #3368b3;
 }
+
+.news-thumb {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+

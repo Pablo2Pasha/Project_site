@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>хзчозасайт.ком</title>
+    <title>airPlanesHistory.com</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <div id="loader">
@@ -11,25 +11,24 @@
 <body>
     <div class="header">
         <div class="info-box">
-            Новини & історія літаків <br> вертолітів та винищувачів
+            Новини & історія літаків рекордсменів<br> вертолітів та винищувачів
         </div>
 
         <div class="search-container">
-            <h1>хзчозасайт.ком</h1>
+            <h1>airPlanesHistory.com</h1>
             <div class="search-box">
-                <input type="text" placeholder="Пошук...">
-                <button class="lupa-button"><img src="https://cdn-icons-png.flaticon.com/512/751/751463.png"></button>
-            </div>
-            <div class="nav-buttons">
-                <a href="news.html"><button>Новини</button></a>
-                <a href="chtivo.html"><button>Чтиво</button></a>
-            </div>
+        <input type="text" id="searchInput" placeholder="Пошук...">
+        <button class="lupa-button" onclick="handleSearch()">
+          <img src="https://cdn-icons-png.flaticon.com/512/751/751463.png">
+        </button>
+      </div>
+
         </div>
     </div>
     <main class="main-section">
     <div class="main-box">
         <img src="">
-        <button>Літаки</button>
+        <a href="planes.html"><button>Літаки</button></a>
     </div>
     <div class="main-box">
         <img src="">
@@ -39,6 +38,7 @@
         <img src="">
         <button>Винищувачі</button>
     </div>
+
 </main>
 </body>
 </html>

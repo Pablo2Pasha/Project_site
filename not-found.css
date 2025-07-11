@@ -1,0 +1,25 @@
+ body {
+      background-color: #e3e9f5;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 100px;
+    }
+
+    .message {
+      font-size: 24px;
+      color: #183a71;
+      margin-bottom: 30px;
+    }
+
+    .btn-link {
+      padding: 10px 20px;
+      background-color: #2469ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .btn-link:hover {
+      transform: scale(1.1);
+    }

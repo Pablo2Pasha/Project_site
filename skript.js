@@ -1,3 +1,38 @@
+
+function handleSearch() {
+  const input = document.getElementById("searchInput").value.toLowerCase().trim();
+
+  const searchMap = {
+    "літак": "planes.html",
+    "літаки": "planes.html",
+    "самолёт": "planes.html",
+    "ан225": "an225.html",
+    "an225": "an225.html",
+    "б52": "b52.html",
+    "b52": "b52.html",
+    "ср71": "sr71.html",
+    "sr71": "sr71.html",
+    "x15": "x15.html",
+    "х15": "x15.html",
+    "винищувач": "fighters.html",
+    "винищувачі": "fighters.html",
+    "винищувачи": "fighters.html",
+    "вертоліт": "helicopters.html",
+    "вертольоти": "helicopters.html",
+    "гелікоптер": "helicopters.html"
+
+  };
+
+  for (const key in searchMap) {
+    if (input.includes(key)) {
+      window.location.href = searchMap[key];
+      return;
+    }
+  }
+
+  window.location.href = "not-found.html";
+}
+
 window.onload = function () {
   const loader = document.getElementById("loader");
   const animationContainer = document.createElement("div");
@@ -67,7 +102,6 @@ window.onload = function () {
   }
   function showThanks(x, y) {
     const prv= document.createElement("div");
-    prv.textContent = "ХЕЛОУ БАЙДЕН";
     prv.style.position = "absolute";
     prv.style.left = x + 50 + "px";
     prv.style.top = y - 10 + "px";
@@ -88,7 +122,7 @@ window.onload = function () {
   }
   function showLogo() {
   const title = document.createElement("div");
-  title.textContent = "хзчозасайт.ком";
+  title.textContent = "airPlanesHistory.com";
   title.style.position = "absolute";
   title.style.top = "-50px";
   title.style.left = "50%";
