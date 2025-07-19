@@ -14,9 +14,9 @@ function handleSearch() {
     "sr71": "sr71.html",
     "x15": "x15.html",
     "х15": "x15.html",
-    "винищувач": "fighters.html",
-    "винищувачі": "fighters.html",
-    "винищувачи": "fighters.html",
+    "винищувач": "air-fighters.html",
+    "винищувачі": "air-fighters.html",
+    "винищувачи": "air-fighters.html",
     "вертоліт": "helicopters.html",
     "вертольоти": "helicopters.html",
     "гелікоптер": "helicopters.html"

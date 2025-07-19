@@ -1,5 +1,5 @@
 async function loadRSS() {
-  const rssURL = "https://rss.app/feeds/x18M8JQs5IpWg2TZ.xml";
+  const rssURL = "https://rss.app/feeds/r9gfxviVn5igQcYo.xml";
   const proxyURL = "https://corsproxy.io/?";
 
   try {
