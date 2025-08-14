@@ -33,7 +33,7 @@ async function loadRSS() {
       container.appendChild(div);
     });
   } catch (error) {
-    console.error("ошибка ЛОООООООООООООЛ", error);
+    console.error("", error);
   }
 }
 
